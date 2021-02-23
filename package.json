@@ -43,5 +43,9 @@
   },
   "engines": {
     "node": ">=12"
+  },
+  "dependencies": {
+    "@types/twit": "^2.2.28",
+    "twit": "^2.2.11"
   }
 }
