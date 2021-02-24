@@ -8,6 +8,12 @@ const mediaArtsSearch: Twit.Params = {
   result_type: 'recent',
 };
 
+const newMediaRT: Twit.Params = {
+  q: '#FlutterDev',
+  count: 100,
+  result_type: 'recent',
+}
+
 const retweetLatest = () => {
   Twitter.get('search/tweets', mediaArtsSearch, (error: Error, data: any) => {
     console.log(error, data);
@@ -19,7 +25,32 @@ const retweetLatest = () => {
         (error: Error, response: Response) => {
           if (response) {
             console.log(
-              'Success! Check your bot, it should have retweeted something.',
+              'Succesfully Tweeted!',
+            );
+          }
+          if (error) {
+            console.log('There was an error with Twitter:', error);
+          }
+        },
+      );
+    } else {
+      console.log('There was an error with your hashtag search:', error);
+    }
+  });
+};
+
+const retweetNewTwitter = () => {
+  Twitter.get('search/tweets', newMediaRT, (error: Error, data: any) => {
+    console.log(error, data);
+    if (!error) {
+      const retweetId = data.statuses[0].id_str;
+      Twitter.post(
+        'statuses/retweet/' + retweetId,
+        {},
+        (error: Error, response: Response) => {
+          if (response) {
+            console.log(
+              'Succesfully Tweeted!',
             );
           }
           if (error) {
@@ -34,4 +65,6 @@ const retweetLatest = () => {
 };
 
 retweetLatest();
-setInterval(retweetLatest, 1000 * 20);
+retweetNewTwitter(); 
+setInterval(retweetLatest, 1000 * 30 * 2);
+setInterval(retweetNewTwitter, 1000 * 30 * 2);
