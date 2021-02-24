@@ -1,1 +1,1 @@
-worker: node index.ts
+worker: yarn dev
