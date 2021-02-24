@@ -4,13 +4,13 @@ const Twitter = new Twit(require('./config'));
 
 const mediaArtsSearch: Twit.Params = {
   q: '#Flutter',
-  count: 100,
+  count: 50,
   result_type: 'recent',
 };
 
 const newMediaRT: Twit.Params = {
   q: '#FlutterDev',
-  count: 100,
+  count: 50,
   result_type: 'recent',
 }
 
@@ -66,5 +66,5 @@ const retweetNewTwitter = () => {
 
 retweetLatest();
 retweetNewTwitter(); 
-setInterval(retweetLatest, 1000 * 30 * 2);
-setInterval(retweetNewTwitter, 1000 * 30 * 2);
+setInterval(retweetLatest, 1000 * 20);
+setInterval(retweetNewTwitter, 1000 * 20);
