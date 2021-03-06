@@ -6,9 +6,8 @@ A Retweet bot which retweets #Flutter, #FlutterDev and #FlutterEngage.
 
 1. Install dependencies
 
-```
-npm install
-
+```bash
+$ npm install
 ```
 2. Create ``config.ts`` file in ``src`` and add the following code:
 
@@ -19,7 +18,6 @@ module.exports = {
     access_token: 'ACCESS_TOKEN',
     access_token_secret: 'ACCESS_TOKEN_SECRET'
 }
-
 ```
 The API Keys can be found by going to [Twitter Developers Portal](https://developer.twitter.com/) and submitting an API key request.
 
