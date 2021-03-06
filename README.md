@@ -4,11 +4,24 @@
 
 1. Install dependencies
 
-```bash
-$ yarn
 ```
+npm install
 
-2. Launch the dev mode
+```
+2. Create ``config.ts`` file in ``src`` and add the following code:
+
+```
+module.exports = {
+    consumer_key: 'CONSUMER_KEY',
+    consumer_secret: 'CONSUMER_SECRET',
+    access_token: 'ACCESS_TOKEN',
+    access_token_secret: 'ACCESS_TOKEN_SECRET'
+
+}
+```
+The API Keys can be found by going to developer.twitter.com and submitting an API key request.
+
+3. Launch app in dev mode
 
 ```bash
 $ yarn dev
